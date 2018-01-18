@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="src/assets/js/ajax.js"></script>
+</head>
+<body>
+
+<div class="VideoTitle">
+    <input type="button" name="checkAll" che>
+</div>
+
+
+
+
+<script>
+    var welfare = encodeURI("五险一金");
+    ajax({
+        url:"http://zhaopin.baidu.com/api/quanzhiasync?sort_type=1&detailmode=close&rn=3&pn=20",
+        data:{"city":"深圳","query":"服务","date":"20171129_20171209","welfare":"五险一金","education":"高中","employertype":"民营"}, // district指的是所在区域，如延平区
+        //工作福利：welfare:五险一金
+        //薪资：salary=5001_7999
+        //学历：education:高中
+        //经验：experience:1-3年
+        //公司性质：employertype:民营
+        //发布时间：date:20171202_20171209
+
+        //排序：sort_key:5 sort_type:1 ：按发布时间排序
+        //排序：sort_key:4 sort_type:1 ：按薪资排序
+        dataType:"jsonp",
+        success:function (data) {
+            console.log(data);
+        }
+    })
+</script>
+</body>
+</html>

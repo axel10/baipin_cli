@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>vue-cli</title>
+    <script src="https://mat1.gtimg.com/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.3.3/vue.js"></script>
+
+    <script>
+        Date.prototype.Format = function (fmt) { //author: meizz
+            var o = {
+                "M+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "h+": this.getHours(), //小时
+                "m+": this.getMinutes(), //分
+                "s+": this.getSeconds(), //秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                "S": this.getMilliseconds() //毫秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        }
+
+        Date.prototype.MinusDay = function (day) {
+            let val = this.valueOf();
+            val = val - day * 24 * 60 * 60 * 1000;
+            val = new Date(val);
+            return val;
+        }
+
+    </script>
+    <script src="src/assets/js/distpicker.data.min.js"></script>
+    <script src="src/assets/js/distpicker.min.js"></script>
+    <link rel="stylesheet" href="src/assets/css/base.css">
+
+    <!--<script src="https://cdn.bootcss.com/vuex/3.0.1/vuex.min.js"></script>-->
+</head>
+<body>
+<div id="app">
+
+
+</div>
+
+<script>
+
+</script>
+<script src="/dist/build.js"></script>
+
+</body>
+</html>

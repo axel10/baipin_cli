@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = [1, 543, 1231, 23, 12432, 3, 0,123, 124, 233, 123, 213, 3];
+
+    for (var i = arr.length; i >=0; i--) {
+        for (var j = i; j < arr.length - 1; j++) {
+            if (arr[j] < arr[j + 1]) {
+                var temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+/*    for (var j = 0; j < arr.length - 1; j++) {
+        if (arr[j] < arr[j + 1]) {
+            var temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+        }
+    }*/
+
+
+
+    console.log(arr);
+
+</script>
+</body>
+</html>
